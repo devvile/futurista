@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Header } from "@/components/header";
+import { Header } from "@/components/Header";
 import { Bebas_Neue } from 'next/font/google'
 
 export const bebasNeue = Bebas_Neue({ 
