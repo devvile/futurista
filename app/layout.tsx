@@ -12,7 +12,6 @@ export const bebasNeue = Bebas_Neue({
 export const metadata: Metadata = {
   title: "Futurista - Ai solution for your business",
   description: "Investment strategies that outperform the market",
-    generator: 'v0.app'
 };
 
 export default function RootLayout({
