@@ -20,55 +20,35 @@
 
 @layer base {
   :root {
-    --background: #000000;
-    --foreground: #ffffff;
-    --primary: #3f14a3;
-    --primary-foreground: #ffffff;
-    --border: #424242;
-    
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --color-primary: var(--primary);
-    --color-primary-foreground: var(--primary-foreground);
-    --color-border: var(--border);
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --primary: 260 85% 36%;
+    --primary-foreground: 0 0% 100%;
+    --border: 0 0% 26%;
+  }
+
+  * {
+    @apply border-border;
   }
 
   body {
-    background: var(--background);
-    color: var(--foreground);
+    @apply bg-background text-foreground;
     font-family: Arial, Helvetica, sans-serif;
   }
 }
 
 @layer utilities {
-  .container {
-    margin-inline: auto;
-    padding-inline: 1rem;
-  }
-
-  @media (min-width: 768px) {
-    .container {
-      padding-inline: 2rem;
-    }
-  }
-
-  @media (min-width: 1280px) {
-    .container {
-      padding-inline: 3rem;
-    }
-  }
-
   .shadow-glow {
     box-shadow: 0 0 8px 2px var(--tw-shadow-color);
   }
 }
 
 #webgl {
+  position: absolute;
   top: 0;
   left: 0;
-  position: absolute;
-  height: 100svh;
   width: 100%;
+  height: 100svh;
 }
 
 #webgl canvas {
