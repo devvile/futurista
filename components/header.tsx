@@ -11,11 +11,11 @@ const Header = () => {
             Futurista
           </p>
         </Link>
-        <nav className="flex max-lg:hidden absolute left-1/2 -translate-x-1/2 items-center justify-center gap-x-10">
+        <nav className="flex max-lg:hidden absolute left-1/2 -translate-x-1/2 items-center justify-center gap-x-8">
           {["About", "Services", "Insights", "Contact"].map((item, index) => (
             <Link
-              className="uppercase inline-block text-foreground/60 hover:text-foreground/100 duration-150 transition-colors ease-out select-none animate-in fade-in slide-in-from-top-4"
-              style={{ 
+              className="uppercase inline-block text-foreground/60 hover:text-foreground/100 duration-150 transition-colors ease-out select-none animate-in fade-in slide-in-from-top-4 text-sm"
+              style={{
                 animationDelay: `${(index + 1) * 100}ms`,
                 animationDuration: '700ms',
                 animationFillMode: 'backwards'
