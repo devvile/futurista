@@ -130,7 +130,7 @@ export function Contact() {
                   type="submit"
                   variant={"default"}
                   disabled={isSubmitting}
-                  className="w-full bg-background/30 hover:bg-orange-700 px-8 py-4 rounded-xl font-medium transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="bg-background/30 hover:bg-orange-700 px-8 py-4 rounded-xl font-medium transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   {isSubmitting ? (
                     <span className="flex items-center justify-center gap-2">

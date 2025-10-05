@@ -8,11 +8,13 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                     {/* Company description */}
                     <div className="md:col-span-1">
-                        <p className="text-gray-400 text-sm leading-relaxed">
-                            Futurista is all you'll ever need in a template. It stands out from the crowd, fully customizable and with the power of CMS, you can achieve results in a matter of minutes.
+                        <p className="text-s sm:text-xl md:text-2xl ml-4 font-centauri select-none animate-in fade-in slide-in-from-top-4 duration-700 hero-title-mobile-landscape">
+                            Futurista
                         </p>
                     </div>
-                    <div></div>
+                    <div>
+
+                    </div>
                     {/* Home column */}
                     <div>
                         <h4 className="font-semibold mb-4 text-base">Home</h4>

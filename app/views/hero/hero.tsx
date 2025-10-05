@@ -10,7 +10,7 @@ export function Hero() {
   return (
     <div className="relative h-svh w-full">
       <GL hovering={hovering} />
-      <div className="absolute inset-0 flex items-end justify-center pb-10 lg:pb-20">
+      <div className="absolute inset-0 flex items-end justify-center pb-10 lg:pb-20 lg:mb-20">
         <div className="text-center w-full px-4">
           <h1
             className="text-3xl sm:text-5xl md:text-6xl font-lakes font-normal animate-in fade-in slide-in-from-bottom-4 select-none hero-title-mobile-landscape"
