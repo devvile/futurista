@@ -12,7 +12,7 @@ export function Hero() {
       <GL hovering={hovering} />
       <div className="pb-20 mt-auto text-center relative">
         <h1 
-          className="text-3xl sm:text-4xl md:text-5xl font-lakes font-normal animate-in fade-in slide-in-from-bottom-4"
+          className="text-3xl sm:text-5xl md:text-6xl font-lakes font-normal animate-in fade-in slide-in-from-bottom-4 select-none"
           style={{ 
             animationDelay: '1000ms',
             animationDuration: '800ms',
@@ -20,8 +20,15 @@ export function Hero() {
           }}
         >
           Defining the Future. <br />
-          <i className="font-lakes font-bold">Now.</i>
+
         </h1>
+        <h1 className=" text-3xl sm:text-4xl md:text-5xl font-lakes font-bold animate-in fade-in slide-in-from-bottom-4 select-none mt-4"
+                  style={{ 
+            animationDelay: '1200ms',
+            animationDuration: '800ms',
+            animationFillMode: 'backwards'
+          }}
+        >Now.</h1>
         <p 
           className="font-mono text-sm sm:text-base text-foreground/80 text-balance mt-8 max-w-[500px] mx-auto animate-in fade-in slide-in-from-bottom-4"
           style={{ 
