@@ -23,7 +23,7 @@ export function Hero() {
           <i className="font-lakes font-bold">Now.</i>
         </h1>
         <p 
-          className="font text-sm sm:text-base text-foreground/80 text-balance mt-8 max-w-[500px] mx-auto animate-in fade-in slide-in-from-bottom-4"
+          className="font-mono text-sm sm:text-base text-foreground/80 text-balance mt-8 max-w-[500px] mx-auto animate-in fade-in slide-in-from-bottom-4"
           style={{ 
             animationDelay: '1200ms',
             animationDuration: '800ms',
