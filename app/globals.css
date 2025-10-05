@@ -72,6 +72,8 @@
   }
 }
 
+
+
 @layer utilities {
   .shadow-glow {
     box-shadow: 0 0 8px 2px var(--tw-shadow-color);
@@ -94,3 +96,10 @@
   .font-lakes {
     letter-spacing: 0.10em;
   }
+
+  /* Mobile landscape - smaller hero title */
+@media (max-width: 1023px) and (orientation: landscape) {
+  .hero-title-mobile-landscape {
+    font-size: 1.5rem !important; /* Adjust this value as needed */
+  }
+}

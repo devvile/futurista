@@ -54,7 +54,7 @@ export const MobileMenu = ({ className }: MobileMenuProps) => {
               e.preventDefault();
             }
           }}
-          className="fixed top-0 left-0 w-full z-40 py-28 md:py-40"
+          className="fixed top-0 left-8 w-full z-40 py-28 md:py-40"
         >
           <Dialog.Title className="sr-only">Menu</Dialog.Title>
 
@@ -69,16 +69,6 @@ export const MobileMenu = ({ className }: MobileMenuProps) => {
                 {item.name}
               </Link>
             ))}
-
-            <div className="mt-6">
-              <Link
-                href="/#sign-in"
-                onClick={handleLinkClick}
-                className="inline-block text-xl font-mono uppercase text-primary transition-colors ease-out duration-150 hover:text-primary/80 py-2"
-              >
-                Sign In
-              </Link>
-            </div>
           </nav>
         </Dialog.Content>
       </Dialog.Portal>

@@ -6,9 +6,6 @@ const OurServices = () => {
     <section className="py-24 px-8 bg-gradient-to-b from-background via-background to-primary">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-20">
-                    <div className="inline-block border border-white/20 rounded-full px-4 py-2 text-sm mb-6">
-                        Our Services
-                    </div>
                     <h2 className="text-5xl md:text-6xl font-bold mb-6">
                         AI Solutions That Take Your Business to the Next Level
                     </h2>

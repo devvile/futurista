@@ -16,7 +16,7 @@ export default function Home() {
         <Leva hidden/>
       </div>
       <OurServices />
-      <section className="py-24 px-8 bg-gradient-to-b from-primary via-background to-background">
+      <section className=" bg-gradient-to-b from-primary via-background to-background">
         <Processes />
         <Strengths />
         <Contact />
