@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react"
 
 const CallToAction = ()=>{
-    return         <section className="py-16 px-8 bg-black">
+    return       <section className="py-16 px-8 bg-black">
           <div className="max-w-5xl mx-auto">
             <div className="relative bg-gradient-to-br from-[#4402fa]/40 to-[#6b3dff]/20 border border-[#4402fa]/30 rounded-3xl p-12 md:p-16 text-center overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-[#4402fa]/10 to-transparent"></div>

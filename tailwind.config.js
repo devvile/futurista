@@ -20,6 +20,8 @@ module.exports = {
       },
       fontFamily: {
         sentient: ['Sentient', 'sans-serif'],
+        centauri: ['Centauri', 'sans-serif'],
+        lakes: ['Lakes', 'sans-serif'], 
       },
       boxShadow: {
         glow: '0 0 8px 2px var(--tw-shadow-color)',

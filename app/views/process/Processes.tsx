@@ -2,7 +2,7 @@ import { ArrowRight, TrendingUp, MessageCircle, DollarSign, } from "lucide-react
 
 const ProcessesView = () => {
     return (
-        <section className="py-16 px-8 bg-black">
+        <section className="py-16 px-8">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold mb-4">

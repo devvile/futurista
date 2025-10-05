@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Mail, Phone, ArrowLeft } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -41,17 +42,18 @@ export function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+    <div className="relative p-12 md:p-16 text-center overflow-hidden bg-gradient-to-b from-background via-background to-primary/50">
       <div className="stars absolute inset-0"></div>
       <div className="stars2 absolute inset-0"></div>
       <div className="stars3 absolute inset-0"></div>
 
       <div className="glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#4402fa]/20 rounded-full blur-[120px]"></div>
 
-      <div className="relative z-10">
+      <div className="relative z-10 ">
         <main className="min-h-[calc(100vh-88px)] px-8 py-16 flex items-center justify-center">
           <div className="w-full max-w-6xl">
             <div className="text-center mb-12">
+                {/* title */}
               <div className="inline-block border border-white/20 rounded-full px-4 py-2 text-sm mb-6 animate-fade-in">
                 Contact
               </div>
@@ -63,42 +65,12 @@ export function Contact() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm hover:bg-white/[0.07] transition-all duration-300 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-[#4402fa]/20 rounded-xl flex items-center justify-center">
-                    <Mail className="w-6 h-6 text-[#4402fa]" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-1">E-mail</h3>
-                    <a href="mailto:Admin@xtract.com" className="text-gray-400 hover:text-white transition-colors">
-                      Admin@xtract.com
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm hover:bg-white/[0.07] transition-all duration-300 animate-fade-in-up" style={{animationDelay: '0.3s'}}>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-[#4402fa]/20 rounded-xl flex items-center justify-center">
-                    <Phone className="w-6 h-6 text-[#4402fa]" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-1">Phone</h3>
-                    <a href="tel:+19698198061" className="text-gray-400 hover:text-white transition-colors">
-                      +1(969) 819-8061
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 backdrop-blur-sm animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+            <div className="bg-gradient-to-br from-primary to-[#6b3dff]/40 border border-[#4402fa]/30border border-white/10 rounded-3xl p-8 md:p-12 backdrop-blur-sm animate-fade-in-up" style={{animationDelay: '0.4s'}} >
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="">
                   <div className="form-group">
                     <label htmlFor="firstName" className="block text-sm font-medium mb-2">
-                      First Name
+                      Name
                     </label>
                     <input
                       type="text"
@@ -107,22 +79,6 @@ export function Contact() {
                       value={formData.firstName}
                       onChange={handleChange}
                       placeholder="Jane"
-                      required
-                      className="w-full bg-black/40 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[#4402fa]/50 transition-all duration-300 hover:border-white/30"
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="lastName" className="block text-sm font-medium mb-2">
-                      Last Name
-                    </label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      name="lastName"
-                      value={formData.lastName}
-                      onChange={handleChange}
-                      placeholder="Smith"
                       required
                       className="w-full bg-black/40 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[#4402fa]/50 transition-all duration-300 hover:border-white/30"
                     />
@@ -178,11 +134,12 @@ export function Contact() {
                     className="w-full bg-black/40 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[#4402fa]/50 transition-all duration-300 hover:border-white/30 resize-none"
                   />
                 </div>
-
-                <button
+                    <p className='text-stone-400'>By submitting this form, you agree that we will process your personal data in accordance with our Privacy Policy.</p>
+                <Button
                   type="submit"
+                  variant={"default"}
                   disabled={isSubmitting}
-                  className="w-full bg-[#4402fa] hover:bg-[#3602c8] px-8 py-4 rounded-xl font-medium transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="bg-background/30 hover:bg-orange-700 px-8 py-4 rounded-xl font-medium transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   {isSubmitting ? (
                     <span className="flex items-center justify-center gap-2">
@@ -202,7 +159,7 @@ export function Contact() {
                   ) : (
                     'Submit Form'
                   )}
-                </button>
+                </Button>
               </form>
             </div>
           </div>

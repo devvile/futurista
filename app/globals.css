@@ -18,6 +18,41 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Centauri';
+  src: url('/centauri.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Lakes Extended Regular */
+@font-face {
+  font-family: 'Lakes';
+  src: url('/Lakes Extended Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Lakes DemiBold */
+@font-face {
+  font-family: 'Lakes';
+  src: url('/Lakes DemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Lakes Extended Bold */
+@font-face {
+  font-family: 'Lakes';
+  src: url('/Lakes Extended Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
     --background: 0 0% 0%;
