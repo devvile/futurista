@@ -14,21 +14,42 @@ export function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus('idle');
 
-    await new Promise(resolve => setTimeout(resolve, 1500));
-
-    setIsSubmitting(false);
-    setSubmitStatus('success');
-
-    setTimeout(() => {
-      setSubmitStatus('idle');
-      setFormData({
-        firstName: '',
-        email: '',
-        phone: '',
-        message: ''
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-    }, 3000);
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      setSubmitStatus('success');
+
+      setTimeout(() => {
+        setSubmitStatus('idle');
+        setFormData({
+          firstName: '',
+          email: '',
+          phone: '',
+          message: ''
+        });
+      }, 3000);
+    } catch (error) {
+      console.error('Error sending message:', error);
+      setSubmitStatus('error');
+      
+      setTimeout(() => {
+        setSubmitStatus('idle');
+      }, 3000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -151,6 +172,12 @@ export function Contact() {
                     'Submit Form'
                   )}
                 </Button>
+
+                {submitStatus === 'error' && (
+                  <p className="text-red-400 text-sm text-center">
+                    Failed to send message. Please try again.
+                  </p>
+                )}
               </form>
             </div>
           </div>
