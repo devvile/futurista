@@ -2,37 +2,45 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { Menu, X } from "lucide-react";
-
-// Share the same nav config
-export const navItems = [
-  { name: "Services", type: "section" as const, href: "#services" },
-  { name: "Benefits", type: "section" as const, href: "#benefits" },
-  { name: "About", type: "page" as const, href: "/about" },
-  { name: "Contact", type: "section" as const, href: "#contact" },
-];
+import { navItems } from "@/config/navigation";
 
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
 
-  const handleScrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-    e.preventDefault();
+  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, item: typeof navItems[0]) => {
     setIsOpen(false); // Close menu
-    
-    // Small delay to allow menu close animation
-    setTimeout(() => {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        const offset = 100;
-        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-        const offsetPosition = elementPosition - offset;
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth"
-        });
-      }
-    }, 100);
+    if (item.type === "page") {
+      // Let default Link behavior handle page navigation
+      return;
+    }
+
+    e.preventDefault();
+    const sectionId = item.name.toLowerCase();
+
+    // If we're not on home page, navigate to home first
+    if (pathname !== "/") {
+      router.push(`/#${sectionId}`);
+    } else {
+      // We're on home page, just scroll after menu closes
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const offset = 100;
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = elementPosition - offset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
+      }, 100);
+    }
   };
 
   return (
@@ -51,14 +59,8 @@ export function MobileMenu() {
             {navItems.map((item) => (
               <Link
                 key={item.name}
-                href={item.href}
-                onClick={(e) => {
-                  if (item.type === "section") {
-                    handleScrollToSection(e, item.name.toLowerCase());
-                  } else {
-                    setIsOpen(false); // Close menu for page navigation
-                  }
-                }}
+                href={item.type === "page" ? item.href : `/#${item.name.toLowerCase()}`}
+                onClick={(e) => handleNavigation(e, item)}
                 className="text-2xl uppercase text-foreground/60 hover:text-foreground/100 transition-colors"
               >
                 {item.name}

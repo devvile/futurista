@@ -4,14 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Logo } from "./logo";
 import { MobileMenu } from "./mobile-menu";
-
-// Define navigation items with their types
-const navItems = [
-  { name: "Services", type: "section" as const, href: "#services" },
-  { name: "Benefits", type: "section" as const, href: "#benefits" },
-  { name: "About", type: "page" as const, href: "/about" },
-  { name: "Contact", type: "section" as const, href: "#contact" },
-];
+import { navItems } from "@/config/navigation";
 
 const Header = () => {
   const pathname = usePathname();
@@ -29,24 +22,19 @@ const Header = () => {
     // If we're not on home page, navigate to home first
     if (pathname !== "/") {
       router.push(`/#${sectionId}`);
-      // The scrolling will happen via useEffect on home page
     } else {
       // We're on home page, just scroll
-      scrollToSection(sectionId);
-    }
-  };
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const offset = 100;
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - offset;
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offset = 100;
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
     }
   };
 
