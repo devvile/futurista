@@ -20,7 +20,7 @@ export function Hero() {
           behavior: "smooth"
         });
       }
-    }, 500);
+    }, 700);
   };
 
   return (

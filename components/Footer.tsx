@@ -4,7 +4,7 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                     <div className="md:col-span-1">
-                        <p className="text-s sm:text-xl md:text-2xl ml-4 font-centauri select-none animate-in fade-in slide-in-from-top-4 duration-700 hero-title-mobile-landscape">
+                        <p className="sm:text-2xl md:text-2xl ml-4 font-centauri select-none animate-in fade-in slide-in-from-top-4 duration-700 hero-title-mobile-landscape">
                             Futurista
                         </p>
                         <p className="font-mono ml-4 text-stone-400 text-xs sm:text-sm md:text-base">
