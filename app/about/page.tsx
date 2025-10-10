@@ -5,58 +5,32 @@ import { Leva } from "leva";
 import Footer from "@/components/Footer";
 
 export default function AboutPage() {
+    console.log('📄 About page rendering');
+    
     return (
         <>
             <section id="about-hero">
-                <HeroLayout>
-                    {({ hovering, setHovering }: any) => (
-                        <div className="max-w-4xl mx-auto">
-                            <img src="" />
-                            <h1
-                                className="text-3xl sm:text-5xl md:text-6xl font-lakes font-normal animate-in fade-in slide-in-from-bottom-4 select-none hero-title-mobile-landscape"
-                                style={{
-                                    animationDelay: '1000ms',
-                                    animationDuration: '800ms',
-                                    animationFillMode: 'backwards'
-                                }}
-                            >
-                                Our Mission:
-                            </h1>
-                            <h1
-                                className="text-3xl sm:text-4xl md:text-5xl font-lakes font-bold animate-in fade-in slide-in-from-bottom-4 select-none mt-2 hero-title-mobile-landscape"
-                                style={{
-                                    animationDelay: '1200ms',
-                                    animationDuration: '800ms',
-                                    animationFillMode: 'backwards'
-                                }}
-                            >
-                                Evolve.
-                            </h1>
-                            <p
-                                className="font-mono text-sm sm:text-base text-foreground/80 text-balance mt-6 max-w-[500px] lg:max-w-[600px] xl:max-w-[650px] mx-auto animate-in fade-in slide-in-from-bottom-4"
-                                style={{
-                                    animationDelay: '1200ms',
-                                    animationDuration: '800ms',
-                                    animationFillMode: 'backwards'
-                                }}
-                            >
-                                We stand at the forefront of a new era where creativity meets technology,
-                                redefining what's possible. The rise of Artificial Intelligence marks a new
-                                chapter in human history—and we're here to guide you through it. The future
-                                belongs to the bold, and with the right expertise, AI becomes your competitive
-                                advantage in a rapidly evolving world.
+                <HeroLayout variant="about" centered={true}>
+                    <div className="max-w-4xl mx-auto">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Our Story</h2>
+                        <div className="space-y-6 text-gray-300 text-center">
+                            <p>
+                                Founded with a vision to bridge the gap between artificial intelligence and real-world business applications,
+                                Futurista has grown into a trusted partner for companies looking to leverage AI technology.
+                            </p>
+                            <p>
+                                Our team combines deep technical expertise with a practical understanding of business challenges,
+                                allowing us to deliver solutions that truly make a difference.
                             </p>
                         </div>
-                    )}
+                    </div>
                 </HeroLayout>
             </section>
 
             <div className="hidden md:block">
                 <Leva hidden />
             </div>
-            <section className="bg-gradient-to-b from-background via-background to-primary h-[800px]">
 
-            </section>
             <Footer />
         </>
     );
