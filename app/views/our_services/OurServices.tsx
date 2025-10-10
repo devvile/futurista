@@ -3,7 +3,7 @@ import { OUR_SERVICES } from "@/lib/services";
 
 const OurServices = () => {
     return (
-    <section className="py-24 px-8 bg-gradient-to-b from-background via-background to-primary">
+    <section className="pt-24 pb-2 px-8 bg-gradient-to-b from-background via-background to-primary">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-20">
                     <h2 className="text-5xl md:text-6xl font-bold mb-6">

@@ -1,6 +1,7 @@
 import { MobileMockup } from "@/app/views/our_services/components/MobileMockup";
 import { AIAssistantMockup } from "@/app/views/our_services/components/AiAssistantMockup";
 import { WorkflowMockup } from "@/app/views/our_services/components/WorkfloMockup";
+import  SocialsBots  from "@/app/views/our_services/components/SocialsBots";
 
 export const OUR_SERVICES = [
   {
@@ -36,7 +37,7 @@ export const OUR_SERVICES = [
     title: "Social Media Automations",
     description: "We deliver intelligent automations for social platforms—handling engagement, detecting negative interactions, and moderating conversations. Our solutions also drive lead generation, helping you turn social presence into measurable growth.",
     tags: ['Engagement', 'Moderation', 'Lead Generation'],
-    image: <MobileMockup />,
+    image: <SocialsBots/>,
     reverse: true
   },
 ];
