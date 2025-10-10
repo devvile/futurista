@@ -39,10 +39,10 @@ export default function AboutPage() {
                             animationFillMode: 'backwards'
                         }}
                     >
-                        We stand at the dawn of a new era. Artificial Intelligence is rewriting the 
-                        rules of what's possible, marking a pivotal chapter in human progress. As this 
+                        We stand at the dawn of a new era. Artificial Intelligence is rewriting the
+                        rules of what's possible, marking a pivotal chapter in human progress. As this
                         revolution unfolds, we're here to guide your business through the transformation—
-                        turning cutting-edge technology into competitive advantage. The future belongs 
+                        turning cutting-edge technology into competitive advantage. The future belongs
                         to the bold. Join us in shaping it.
                     </p>
                     <div
@@ -61,7 +61,7 @@ export default function AboutPage() {
                 <Leva hidden />
             </div>
             <section className="py-20 px-4 bg-gradient-to-b from-background to-primary/30">
-                        <div className="h-[800px]"></div>
+                <div className="h-[800px]"></div>
             </section>
             <Footer />
         </>

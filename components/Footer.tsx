@@ -7,7 +7,7 @@ const Footer = () => {
                         <p className="text-s sm:text-xl md:text-2xl ml-4 font-centauri select-none animate-in fade-in slide-in-from-top-4 duration-700 hero-title-mobile-landscape">
                             Futurista
                         </p>
-                        <p className="font-mono ml-4 text-stone-400">
+                        <p className="font-mono ml-4 text-stone-400 text-xs sm:text-sm md:text-base">
                             <span className="email-protected">
                                 patryk.czemierowski
                                 <span className="at-symbol" data-at="@"></span>
@@ -37,7 +37,7 @@ const Footer = () => {
                 </div>
 
                 <div className="pt-8 border-t border-white/10">
-                    <p className="text-gray-400 text-lg"> © Futurista {new Date().getFullYear()}</p>
+                    <p className="text-gray-400 text-lg "> © Futurista {new Date().getFullYear()}</p>
                 </div>
             </div>
 
