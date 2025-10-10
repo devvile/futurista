@@ -5,7 +5,7 @@ const Footer = () => {
                 {/* Top section with logo and newsletter */}
 
                 {/* Main content grid */}
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 select-none">
                     {/* Company description */}
                     <div className="md:col-span-1">
                         <p className="text-s sm:text-xl md:text-2xl ml-4 font-centauri select-none animate-in fade-in slide-in-from-top-4 duration-700 hero-title-mobile-landscape">

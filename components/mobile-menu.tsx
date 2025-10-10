@@ -1,77 +1,95 @@
-"use client";
+"use client"
 
-import { cn } from "@/lib/utils";
-import * as Dialog from "@radix-ui/react-dialog";
-import { Menu, X } from "lucide-react";
-import Link from "next/link";
 import { useState } from "react";
+import Link from "next/link";
 
-interface MobileMenuProps {
-  className?: string;
-}
-
-export const MobileMenu = ({ className }: MobileMenuProps) => {
+export const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const menuItems = [
-    { name: "About", href: "#about" },
-    { name: "Portfolio", href: "#portfolio" },
-    { name: "Insights", href: "#insights" },
-    { name: "Contact", href: "#contact" },
-  ];
-
-  const handleLinkClick = () => {
+  const handleScrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
     setIsOpen(false);
+    
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const offset = 100;
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    }, 200);
   };
 
   return (
-    <Dialog.Root modal={false} open={isOpen} onOpenChange={setIsOpen}>
-      <Dialog.Trigger asChild>
-        <button
-          className={cn(
-            "group lg:hidden p-2 text-foreground transition-colors",
-            className
-          )}
-          aria-label="Open menu"
-        >
-          <Menu className="group-[[data-state=open]]:hidden" size={24} />
-          <X className="hidden group-[[data-state=open]]:block" size={24} />
-        </button>
-      </Dialog.Trigger>
+    <>
+      {/* Hamburger Button */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="lg:hidden flex flex-col gap-1.5 w-6 h-6 justify-center items-center animate-in fade-in slide-in-from-top-4 z-50 relative"
+        style={{
+          animationDelay: '400ms',
+          animationDuration: '700ms',
+          animationFillMode: 'backwards'
+        }}
+        aria-label="Toggle menu"
+      >
+        <span className={`block h-0.5 w-full bg-foreground transition-transform duration-300 ${isOpen ? 'rotate-45 translate-y-2' : ''}`} />
+        <span className={`block h-0.5 w-full bg-foreground transition-opacity duration-300 ${isOpen ? 'opacity-0' : ''}`} />
+        <span className={`block h-0.5 w-full bg-foreground transition-transform duration-300 ${isOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+      </button>
 
-      <Dialog.Portal>
-        <div
-          data-overlay="true"
-          className="fixed z-30 inset-0 bg-black/50 backdrop-blur-sm"
-        />
+      {/* Mobile Menu with transparent overlay */}
+      <div
+        className={`
+          fixed top-0 left-0 w-full h-screen z-40 lg:hidden
+          flex flex-col items-center justify-center gap-8
+          transition-all duration-300 ease-out
+          bg-black/80 backdrop-blur-sm
+          ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
+        `}
+      >
+        {/* Logo at top */}
+        <div className="absolute top-10 left-1/2 -translate-x-1/2">
+          <Link href="/" onClick={() => setIsOpen(false)}>
+            <p className={`text-xl md:text-2xl font-centauri select-none ${isOpen ? 'animate-in fade-in slide-in-from-top-4' : ''}`}
+              style={isOpen ? {
+                animationDelay: '0ms',
+                animationDuration: '500ms',
+                animationFillMode: 'backwards'
+              } : {}}
+            >
+              Futurista
+            </p>
+          </Link>
+        </div>
 
-        <Dialog.Content
-          onInteractOutside={(e) => {
-            if (
-              e.target instanceof HTMLElement &&
-              e.target.dataset.overlay !== "true"
-            ) {
-              e.preventDefault();
-            }
-          }}
-          className="fixed top-0 left-8 w-full z-40 py-28 md:py-40"
-        >
-          <Dialog.Title className="sr-only">Menu</Dialog.Title>
-
-          <nav className="flex flex-col space-y-6 container mx-auto">
-            {menuItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                onClick={handleLinkClick}
-                className="text-xl font-mono uppercase text-foreground/60 transition-colors ease-out duration-150 hover:text-foreground/100 py-2"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
-        </Dialog.Content>
-      </Dialog.Portal>
-    </Dialog.Root>
+        {/* Navigation Links */}
+        {["Services", "Benefits", "About", "Contact"].map((item, index) => (
+          <Link
+            key={item}
+            href={`#${item.toLowerCase()}`}
+            onClick={(e) => handleScrollToSection(e, item.toLowerCase())}
+            className={`
+              uppercase text-foreground/60 hover:text-foreground/100 
+              duration-150 transition-colors ease-out select-none
+              text-2xl
+              ${isOpen ? 'animate-in fade-in slide-in-from-bottom-4' : ''}
+            `}
+            style={isOpen ? {
+              animationDelay: `${(index + 1) * 100}ms`,
+              animationDuration: '500ms',
+              animationFillMode: 'backwards'
+            } : {}}
+          >
+            {item}
+          </Link>
+        ))}
+      </div>
+    </>
   );
 };
