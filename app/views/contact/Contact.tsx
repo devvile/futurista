@@ -77,7 +77,7 @@ export function Contact() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-primary to-[#6b3dff]/40 border border-[#4402fa]/30 rounded-2xl md:rounded-3xl p-6 md:p-4 lg:p-12 backdrop-blur-sm animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+            <div className="bg-gradient-to-br from-primary to-[#6b3dff]/40 border border-[#4402fa]/30 rounded-2xl md:rounded-3xl p-6 md:p-4 lg:p-20 backdrop-blur-sm animate-fade-in-up" style={{animationDelay: '0.4s'}}>
               <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                 <div className="form-group">
                   <label htmlFor="firstName" className="block text-sm font-medium mb-2 text-left">
@@ -136,7 +136,7 @@ export function Contact() {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Hi, I am jane i want help with...."
+                    placeholder="Tell us more about your project, we are excited to help you make it real"
                     required
                     rows={5}
                     className="w-full bg-black/40 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[#4402fa]/50 transition-all duration-300 hover:border-white/30 resize-none"
@@ -146,12 +146,11 @@ export function Contact() {
                 <p className='text-stone-400 text-xs md:text-sm text-left'>
                   By submitting this form, you agree that we will process your personal data in accordance with our Privacy Policy.
                 </p>
-
                 <Button
                   type="submit"
                   variant={"default"}
                   disabled={isSubmitting}
-                  className="bg-background/30 hover:bg-orange-700 px-8 py-4 rounded-xl font-medium transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="select-none bg-background/30 hover:bg-orange-700 px-8 py-4 rounded-xl font-medium transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   {isSubmitting ? (
                     <span className="flex items-center justify-center gap-2">
