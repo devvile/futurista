@@ -29,19 +29,19 @@ export const glPresets: Record<GLVariant, GLPreset> = {
     vignetteDarkness: 1.5,
     vignetteOffset: 0.4,
   },
-  
+
   about: {
-    speed: 0.51,             
-    noiseScale: 1.4,         
-    noiseIntensity: 0.52,    
-    timeScale: 0.7,            
-    focus: 3.8,              
-    aperture: 1.79,          
-    pointSize: 10.0,         
-    opacity: 0.8,            
-    planeScale: 10.0,        
-    vignetteDarkness: 1.5,   
-    vignetteOffset: 0.4,     
+    speed: 0.51,
+    noiseScale: 0.8,
+    noiseIntensity: 0.74,
+    timeScale: 0.70,
+    focus: 6.6,
+    aperture: 1.36,
+    pointSize: 10.0,
+    opacity: 0.80,
+    planeScale: 10.0,
+    vignetteDarkness: 1.5,
+    vignetteOffset: 0.4,
   },
   
   // 🚀 Manifest page - customize however you want
