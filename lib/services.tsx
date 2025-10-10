@@ -15,8 +15,8 @@ export const OUR_SERVICES = [
   },
   {
     id: 2,
-    badge: "Ai Intergtaions",
-    title: "Ai Intergtaions",
+    badge: "Ai Integrations",
+    title: "Ai Integrations",
     description: "We seamlessly integrate AI models with the platforms you already use, transforming how your teams work—from automating data analysis to streamlining customer interactions and beyond.",
     tags: ['Summaries', 'Scheduling', 'Many more'],
     image: <AIAssistantMockup />,
