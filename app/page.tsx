@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { Hero } from "@/app/views/hero/hero";
 import { Leva } from "leva";
 import OurServices from "./views/our_services/OurServices";
@@ -10,6 +11,30 @@ import Footer from "@/components/Footer";
 import { Contact } from "./views/contact/Contact";
 
 export default function Home() {
+  useEffect(() => {
+    // Handle hash navigation when coming from other pages
+    const hash = window.location.hash;
+    if (hash) {
+      // Remove the # and get section id
+      const sectionId = hash.substring(1);
+      
+      // Wait for page to load, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const offset = 100;
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = elementPosition - offset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
+      }, 100);
+    }
+  }, []);
+
   return (
     <>
       <section id="about">

@@ -1,15 +1,45 @@
 "use client"
 
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { Logo } from "./logo";
 import { MobileMenu } from "./mobile-menu";
 
+// Define navigation items with their types
+const navItems = [
+  { name: "Services", type: "section" as const, href: "#services" },
+  { name: "Benefits", type: "section" as const, href: "#benefits" },
+  { name: "About", type: "page" as const, href: "/about" },
+  { name: "Contact", type: "section" as const, href: "#contact" },
+];
+
 const Header = () => {
-  const handleScrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, item: typeof navItems[0]) => {
+    if (item.type === "page") {
+      // Let default Link behavior handle page navigation
+      return;
+    }
+
     e.preventDefault();
+    const sectionId = item.name.toLowerCase();
+
+    // If we're not on home page, navigate to home first
+    if (pathname !== "/") {
+      router.push(`/#${sectionId}`);
+      // The scrolling will happen via useEffect on home page
+    } else {
+      // We're on home page, just scroll
+      scrollToSection(sectionId);
+    }
+  };
+
+  const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const offset = 100; // Adjust this value based on your header height
+      const offset = 100;
       const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
       const offsetPosition = elementPosition - offset;
 
@@ -29,7 +59,7 @@ const Header = () => {
           </p>
         </Link>
         <nav className="flex max-lg:hidden absolute left-1/2 -translate-x-1/2 items-center justify-center gap-x-8">
-          {["Services", "Benefits", "About", "Contact"].map((item, index) => (
+          {navItems.map((item, index) => (
             <Link
               className="uppercase inline-block text-foreground/60 hover:text-foreground/100 duration-150 transition-colors ease-out select-none animate-in fade-in slide-in-from-top-4 text-sm"
               style={{
@@ -37,11 +67,11 @@ const Header = () => {
                 animationDuration: '700ms',
                 animationFillMode: 'backwards'
               }}
-              href={`#${item.toLowerCase()}`}
-              onClick={(e) => handleScrollToSection(e, item.toLowerCase())}
-              key={item}
+              href={item.type === "page" ? item.href : `/#${item.name.toLowerCase()}`}
+              onClick={(e) => handleNavigation(e, item)}
+              key={item.name}
             >
-              {item}
+              {item.name}
             </Link>
           ))}
         </nav>
