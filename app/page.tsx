@@ -8,18 +8,27 @@ import Processes from "./views/process/Processes";
 import Strengths from "./views/strengths/Strengths";
 import Footer from "@/components/Footer";
 import { Contact } from "./views/contact/Contact";
+
 export default function Home() {
   return (
     <>
-      <Hero />
+      <section id="about">
+        <Hero />
+      </section>
       <div className="hidden md:block">
         <Leva hidden/>
       </div>
-      <OurServices />
-      <section className=" bg-gradient-to-b from-primary via-background to-background">
-        <Processes />
-        <Strengths />
-        <Contact />
+      <section id="services">
+        <OurServices />
+      </section>
+      <section className="bg-gradient-to-b from-primary via-background to-background">
+        <section id="benefits">
+          <Processes />
+          <Strengths />
+        </section>
+        <section id="contact">
+          <Contact />
+        </section>
         <Footer />
       </section>
     </>

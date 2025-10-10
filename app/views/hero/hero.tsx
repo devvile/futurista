@@ -7,6 +7,26 @@ import { useState } from "react";
 
 export function Hero() {
   const [hovering, setHovering] = useState(false);
+
+  const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    
+    // Wait 1 second before scrolling
+    setTimeout(() => {
+      const element = document.getElementById('contact');
+      if (element) {
+        const offset = 100; // Adjust based on your header height
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    }, 500); // 1 second delay
+  };
+
   return (
     <div className="relative h-svh w-full">
       <GL hovering={hovering} />
@@ -50,7 +70,11 @@ export function Hero() {
               animationFillMode: 'backwards'
             }}
           >
-            <Link className="contents" href="/#contact">
+            <Link 
+              className="contents" 
+              href="/#contact"
+              onClick={handleContactClick}
+            >
               <Button
                 size="sm"
                 onMouseEnter={() => setHovering(true)}
