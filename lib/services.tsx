@@ -9,7 +9,7 @@ export const OUR_SERVICES = [
     badge: "Business Automations",
     title: "Business Automations",
     description: "We optimize your internal operations by automating manual workflows—like data entry, reporting, dashboarding and approval chains—saving time and reducing errors. Automation brings greater efficiency, consistency, and allows your team to focus on what truly drives growth.",
-    tags: ['Internal Task Bots', '100+ Automations'],
+    tags: ['Higher Efficiency', 'Save Time'],
     image: <WorkflowMockup />,
     reverse: false
   },
@@ -18,7 +18,7 @@ export const OUR_SERVICES = [
     badge: "Ai Integrations",
     title: "Ai Integrations",
     description: "We seamlessly integrate AI models with the platforms you already use, transforming how your teams work—from automating data analysis to streamlining customer interactions and beyond.",
-    tags: ['Summaries', 'Scheduling', 'Many more'],
+    tags: ['Become Data-driven', 'Ai management'],
     image: <AIAssistantMockup />,
     reverse: true
   },
@@ -27,7 +27,7 @@ export const OUR_SERVICES = [
     badge: "Web and mobile apps",
     title: "Web and mobile apps",
     description: "Our AI-enhanced development process transforms how we build mobile and web applications—automating coding tasks, optimizing workflows, and cutting development time in half while maintaining exceptional quality.",
-    tags: ['Real-time Updates', 'Push Notifications', 'Offline Mode'],
+    tags: ['Stay visible','Create your tools' ,'All Platforms'],
     image: <MobileMockup />,
     reverse: false
   },
