@@ -98,7 +98,7 @@ export default function AboutPage() {
                     <FadeInSection>
                         <div className="grid md:grid-cols-2 gap-12 items-center mb-32">
                             <div>
-                                <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                                <h2 className="text-3xl md:text-5xl  text-center mb-6">
                                     Meet the Founder
                                 </h2>
                                 <p className="text-foreground/80 text-lg mb-6 leading-relaxed">
@@ -107,7 +107,7 @@ export default function AboutPage() {
                                     harness the transformative power of Artificial Intelligence.
                                 </p>
                                 <p className="text-foreground/80 text-lg mb-6 leading-relaxed">
-                                    My journey in tech began [your story here], and I've witnessed firsthand 
+                                    My journey in tech began form passion 7 years afo, and I've witnessed firsthand 
                                     how AI can revolutionize operations, enhance creativity, and unlock 
                                     unprecedented growth opportunities.
                                 </p>
@@ -117,19 +117,22 @@ export default function AboutPage() {
                                     pace, but leading the charge into the future.
                                 </p>
                             </div>
-                            <div className="relative aspect-square md:aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-primary to-primary/40">
+                            <div className="relative aspect-square md:aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-primary to-primary/40 opacity-50">
                                 {/* Replace with your actual image */}
                                 <Image
-                                    src="/your-photo.jpg"
-                                    alt="Patryk Czemierowski"
+                                    src="/1plotno-min.webp"
+                                    alt="CEO photo - Patryk Czemierowski, man with beard in white shirt "
                                     fill
                                     className="object-cover"
                                 />
+                              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                                    Patryk Czemierowski
+                                </h2>
                             </div>
                         </div>
                     </FadeInSection>
 
-                    {/* Our Values */}
+                    {/* Our Values 
                     <FadeInSection delay={200}>
                         <div className="text-center mb-16">
                             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -166,10 +169,9 @@ export default function AboutPage() {
                                 </div>
                             ))}
                         </div>
-                    </FadeInSection>
+                    </FadeInSection> */}
                 </div>
             </section>
-
             <Footer />
         </>
     );

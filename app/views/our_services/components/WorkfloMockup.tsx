@@ -1,6 +1,6 @@
 import { CheckCircle2, Clock, ListTodo, User } from 'lucide-react';
 
-export function WorkflowMockup() {
+const  WorkflowMockup = () => {
   return (
     <div className="bg-gradient-to-br from-primary to-black border border-white/10 rounded-2xl p-6 shadow-2xl">
       <div className="flex items-center gap-2 mb-6 pb-4 border-b border-white/10">
@@ -58,3 +58,5 @@ export function WorkflowMockup() {
     </div>
   );
 }
+
+export default WorkflowMockup

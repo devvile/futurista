@@ -1,6 +1,6 @@
 import { MobileMockup } from "@/app/views/our_services/components/MobileMockup";
 import { AIAssistantMockup } from "@/app/views/our_services/components/AiAssistantMockup";
-import { WorkflowMockup } from "@/app/views/our_services/components/WorkfloMockup";
+import  WorkflowMockup  from "@/app/views/our_services/components/WorkfloMockup";
 import  SocialsBots  from "@/app/views/our_services/components/SocialsBots";
 
 export const OUR_SERVICES = [
