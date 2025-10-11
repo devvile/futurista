@@ -9,16 +9,13 @@ import Processes from "./views/process/Processes";
 import Strengths from "./views/strengths/Strengths";
 import Footer from "@/components/Footer";
 import { Contact } from "./views/contact/Contact";
+import LogoCarousel from "./views/logo_carousel/LogoCarousel";
 
 export default function Home() {
   useEffect(() => {
-    // Handle hash navigation when coming from other pages
     const hash = window.location.hash;
     if (hash) {
-      // Remove the # and get section id
       const sectionId = hash.substring(1);
-      
-      // Wait for page to load, then scroll
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
@@ -43,6 +40,7 @@ export default function Home() {
       <div className="hidden md:block">
         <Leva hidden/>
       </div>
+      <LogoCarousel/>
       <section id="services">
         <OurServices />
       </section>

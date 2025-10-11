@@ -98,8 +98,8 @@ export default function AboutPage() {
                     <FadeInSection>
                         <div className="grid md:grid-cols-2 gap-12 items-center mb-32">
                             <div>
-                                <h2 className="text-3xl md:text-5xl  text-center mb-6">
-                                    Meet the Founder
+                                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-3xl md:text-5xl  text-left mb-6">
+                                    Let's create the Future
                                 </h2>
                                 <p className="text-foreground/80 text-lg mb-6 leading-relaxed">
                                     Hi, I'm Patryk Czemierowski, founder of Futurista. With a passion for 
@@ -107,7 +107,7 @@ export default function AboutPage() {
                                     harness the transformative power of Artificial Intelligence.
                                 </p>
                                 <p className="text-foreground/80 text-lg mb-6 leading-relaxed">
-                                    My journey in tech began form passion 7 years afo, and I've witnessed firsthand 
+                                    My journey in tech began form passion 7 years ago, and I've witnessed firsthand 
                                     how AI can revolutionize operations, enhance creativity, and unlock 
                                     unprecedented growth opportunities.
                                 </p>
@@ -117,7 +117,7 @@ export default function AboutPage() {
                                     pace, but leading the charge into the future.
                                 </p>
                             </div>
-                            <div className="relative aspect-square md:aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-primary to-primary/40 opacity-50">
+                            <div className="relative aspect-square md:aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-primary to-primary/40 opacity-70">
                                 {/* Replace with your actual image */}
                                 <Image
                                     src="/1plotno-min.webp"

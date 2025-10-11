@@ -112,3 +112,50 @@
     /* Adjust this value as needed */
   }
 }
+
+/* Logo Carousel Animations */
+.logo-carousel-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+
+.logo-carousel-track:hover {
+  animation-play-state: paused;
+}
+
+.logo-carousel-content {
+  display: flex;
+  gap: 4rem;
+  padding: 0 2rem;
+}
+
+.logo-item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+  height: 80px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .logo-carousel-content {
+    gap: 2rem;
+  }
+  
+  .logo-item {
+    min-width: 120px;
+    height: 60px;
+  }
+}

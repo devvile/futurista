@@ -2,12 +2,13 @@ const Footer = () => {
     return (
         <footer className="py-12 px-8 bg-gradient-to-b from-[#1a0b3f] via-[#0f0626] to-black border-t border-white/10">
             <div className="max-w-7xl mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                    <div className="md:col-span-1">
-                        <p className="sm:text-2xl md:text-2xl ml-4 font-centauri select-none animate-in fade-in slide-in-from-top-4 duration-700 hero-title-mobile-landscape">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                    {/* Logo and Email */}
+                    <div>
+                        <p className="text-xl sm:text-2xl font-centauri select-none mb-2">
                             Futurista
                         </p>
-                        <p className="font-mono ml-4 text-stone-400 text-xs sm:text-sm md:text-base">
+                        <p className="font-mono text-stone-400 text-xs sm:text-sm">
                             <span className="email-protected">
                                 patryk.czemierowski
                                 <span className="at-symbol" data-at="@"></span>
@@ -15,8 +16,8 @@ const Footer = () => {
                             </span>
                         </p>
                     </div>
-                    <div></div>
-                    {/* Rest of your footer */}
+                    
+                    {/* Home Section */}
                     <div>
                         <h4 className="font-semibold mb-4 text-base">Home</h4>
                         <ul className="space-y-3 text-sm text-gray-400">
@@ -25,6 +26,8 @@ const Footer = () => {
                             <li><a href="#" className="hover:text-white transition-colors">Integrations</a></li>
                         </ul>
                     </div>
+                    
+                    {/* Company Section */}
                     <div>
                         <h4 className="font-semibold mb-4 text-base">Company</h4>
                         <ul className="space-y-3 text-sm text-gray-400">
@@ -37,7 +40,7 @@ const Footer = () => {
                 </div>
 
                 <div className="pt-8 border-t border-white/10">
-                    <p className="text-gray-400 text-lg "> © Futurista {new Date().getFullYear()}</p>
+                    <p className="text-gray-400 text-lg">© Futurista {new Date().getFullYear()}</p>
                 </div>
             </div>
 
