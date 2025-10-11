@@ -18,6 +18,8 @@ const Footer = () => {
                     </div>
                     
                     {/* Home Section */}
+                    <div></div>
+                    {/*
                     <div>
                         <h4 className="font-semibold mb-4 text-base">Home</h4>
                         <ul className="space-y-3 text-sm text-gray-400">
@@ -26,15 +28,16 @@ const Footer = () => {
                             <li><a href="#" className="hover:text-white transition-colors">Integrations</a></li>
                         </ul>
                     </div>
-                    
+                    */}
                     {/* Company Section */}
                     <div>
                         <h4 className="font-semibold mb-4 text-base">Company</h4>
                         <ul className="space-y-3 text-sm text-gray-400">
+                            <li><a href="#about" className="hover:text-white transition-colors">Back to the top</a></li>
                             <li><a href="about" className="hover:text-white transition-colors">About</a></li>
                             <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
+                            <li><a href="#services" className="hover:text-white transition-colors">Services</a></li>
                             <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Terms & Conditions</a></li>
                         </ul>
                     </div>
                 </div>
